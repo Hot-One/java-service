@@ -14,7 +14,7 @@ public class WebConfig implements WebMvcConfigurer {
         @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**")
-                .addResourceLocations("file:./web/build/")
+                .addResourceLocations("file:./web/")
                 .resourceChain(true)
                 .addResolver(new PathResourceResolver() {
                     @Override
@@ -29,7 +29,7 @@ public class WebConfig implements WebMvcConfigurer {
                             return null; 
                         }
 
-                        return new FileSystemResource("./web/build/index.html");
+                        return new FileSystemResource("./web/index.html");
                     }
                 });
     }
